@@ -40,7 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMappingAlgorithm.cs" />
+    <Compile Include="IMappingAlgorithmFactory.cs" />
+    <Compile Include="InputException.cs" />
+    <Compile Include="MappingAlgorithm.cs" />
+    <Compile Include="Models\IInputX.cs" />
+    <Compile Include="Models\IInputY.cs" />
+    <Compile Include="Models\Input.cs" />
+    <Compile Include="Models\Output.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Algorithms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
