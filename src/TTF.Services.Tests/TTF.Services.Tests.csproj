@@ -56,6 +56,7 @@
     <Compile Include="Algorithms\Specialized1Tests.cs" />
     <Compile Include="Algorithms\BaseMappingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MappingAlgorithmFactoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TTF.Services\TTF.Services.csproj">

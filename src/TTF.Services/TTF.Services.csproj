@@ -47,6 +47,7 @@
     <Compile Include="IMappingAlgorithmFactory.cs" />
     <Compile Include="InputException.cs" />
     <Compile Include="MappingAlgorithm.cs" />
+    <Compile Include="MappingAlgorithmFactory.cs" />
     <Compile Include="Models\IInputX.cs" />
     <Compile Include="Models\IInputY.cs" />
     <Compile Include="Models\Input.cs" />
