@@ -1,4 +1,5 @@
 ﻿using System;
+using TTF.Services.Algorithms;
 
 namespace TTF.Services
 {
@@ -6,7 +7,15 @@ namespace TTF.Services
     {
         public IMappingAlgorithm GetMappingAlgorithm(MappingAlgorithmTypes type)
         {
-            throw new NotImplementedException();
+            switch (type)
+            {
+                case MappingAlgorithmTypes.Specialized1:
+                    return new Specialized1();
+                case MappingAlgorithmTypes.Specialized2:
+                    return new Specialized2();
+                default:
+                    return new BaseMapping();
+            }
         }
     }
 }
