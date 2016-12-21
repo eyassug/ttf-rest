@@ -5,7 +5,11 @@ namespace TTF.Services
 {
     public class InputException : ArgumentException
     {
-        public InputException(Input input) : base("Input Error!")
+        public InputException() : base("Input Error!")
+        {
+
+        }
+        public InputException(Input input) : this()
         {
             Input = input;
         }

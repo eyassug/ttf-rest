@@ -10,8 +10,8 @@ namespace TTF.Services.Tests.Algorithms
         [TestMethod]
         public void ComputeX_ShouldReturnCorrectXValues()
         {
-            var s = new bool[] { true, true, true };
-            var r = new bool[] { true, true, false };
+            var s = new bool[] { true, true, false };
+            var r = new bool[] { true, true, true };
             var t = new bool[] { false, true, true };
 
             var xs = BaseMapping.ComputeX(s[0],s[1], s[2]);

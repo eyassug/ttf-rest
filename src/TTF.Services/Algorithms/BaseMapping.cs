@@ -27,12 +27,26 @@ namespace TTF.Services.Algorithms
 
         public static X ComputeX(bool a, bool b, bool c)
         {
-            throw new NotImplementedException();
+            if (b)
+            {
+                if (a && !c) return X.S;
+                if (a && c) return X.R;
+                if (!a && c) return X.T;
+            }
+            throw new InputException();
         }
 
         public static double ComputeY(X x, int d, int e, int f)
         {
-            throw new NotImplementedException();
+            switch (x)
+            {
+                case X.S:
+                    return d + (d * (double)e / 100);
+                case X.R:
+                    return d + (d * (double)(e - f) / 100);
+                default:
+                    return d - (d * (double)f / 100);
+            }
         }
     }
 }
