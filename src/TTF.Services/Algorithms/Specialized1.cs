@@ -11,5 +11,10 @@ namespace TTF.Services.Algorithms
                 return 2 * d + ((double)d * e / 100);
             return BaseMapping.ComputeY(x, d, e, f);
         }
+
+        protected override double ComputeY(X x, IInputY input)
+        {
+            return ComputeY(x, input.D, input.E, input.F);
+        }
     }
 }

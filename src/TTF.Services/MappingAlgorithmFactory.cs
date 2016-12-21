@@ -5,6 +5,12 @@ namespace TTF.Services
 {
     public class MappingAlgorithmFactory : IMappingAlgorithmFactory
     {
+        public IMappingAlgorithm GetMappingAlgorithm(string typeString)
+        {
+            var algorithm = Enum.Parse(typeof(MappingAlgorithmTypes), typeString, ignoreCase:true);
+            return GetMappingAlgorithm((MappingAlgorithmTypes)algorithm);
+        }
+
         public IMappingAlgorithm GetMappingAlgorithm(MappingAlgorithmTypes type)
         {
             switch (type)

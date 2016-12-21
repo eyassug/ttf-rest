@@ -12,5 +12,6 @@
     public interface IMappingAlgorithmFactory
     {
         IMappingAlgorithm GetMappingAlgorithm(MappingAlgorithmTypes type);
+        IMappingAlgorithm GetMappingAlgorithm(string typeString);
     }
 }

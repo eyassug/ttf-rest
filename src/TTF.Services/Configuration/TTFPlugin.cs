@@ -11,6 +11,7 @@ namespace TTF.Services.Configuration
         public void Register(IAppHost appHost)
         {
             appHost.LoadPlugin(new ValidationFeature());
+            appHost.GetContainer().RegisterValidators(typeof(TTFPlugin).Assembly);
             appHost.RegisterAs<MappingAlgorithmFactory, IMappingAlgorithmFactory>();
         }
     }

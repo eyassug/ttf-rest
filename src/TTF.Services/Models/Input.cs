@@ -6,7 +6,7 @@ namespace TTF.Services.Models
     /// Input model required by the REST service
     /// </summary>
     [Route("/ttf/{MappingType}")]
-    public class Input : IInputX, IInputY
+    public class Input : IInputX, IInputY, IReturn<Output>
     {
         public bool A { get; set; }
         public bool B { get; set; }
@@ -17,6 +17,8 @@ namespace TTF.Services.Models
         /// <summary>
         /// Used as part of the request to resolve the desired mapping type
         /// </summary>
+        [ApiMember(Name = "MappingType", Description = "Mapping algorithm to be used", ParameterType = "path", DataType = "string", IsRequired = true)]
+        [ApiAllowableValues("MappingType", typeof(MappingAlgorithmTypes))]
         public string MappingType { get; set; }
     }
 }
