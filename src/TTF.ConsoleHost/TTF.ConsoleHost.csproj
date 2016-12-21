@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FDB2FDFE-C058-4F8C-961D-98278523C36B}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{2E10E4A5-0169-4564-9DEE-7F732395B0B8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TTF.Services</RootNamespace>
-    <AssemblyName>TTF.Services</AssemblyName>
+    <RootNamespace>TTF.ConsoleHost</RootNamespace>
+    <AssemblyName>TTF.ConsoleHost</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,6 +35,9 @@
   <ItemGroup>
     <Reference Include="ServiceStack">
       <HintPath>..\packages\ServiceStack.4.5.4\lib\net45\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client">
+      <HintPath>..\packages\ServiceStack.Client.4.5.4\lib\net45\ServiceStack.Client.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Common">
       <HintPath>..\packages\ServiceStack.Common.4.5.4\lib\net45\ServiceStack.Common.dll</HintPath>
@@ -52,25 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms\BaseMapping.cs" />
-    <Compile Include="Algorithms\Specialized1.cs" />
-    <Compile Include="Algorithms\Specialized2.cs" />
-    <Compile Include="API\MappingService.cs" />
-    <Compile Include="Configuration\TTFPlugin.cs" />
-    <Compile Include="IMappingAlgorithm.cs" />
-    <Compile Include="IMappingAlgorithmFactory.cs" />
-    <Compile Include="InputException.cs" />
-    <Compile Include="MappingAlgorithm.cs" />
-    <Compile Include="MappingAlgorithmFactory.cs" />
-    <Compile Include="Models\IInputX.cs" />
-    <Compile Include="Models\IInputY.cs" />
-    <Compile Include="Models\Input.cs" />
-    <Compile Include="Models\Output.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validation\InputValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TTF.Services\TTF.Services.csproj">
+      <Project>{fdb2fdfe-c058-4f8c-961d-98278523c36b}</Project>
+      <Name>TTF.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
