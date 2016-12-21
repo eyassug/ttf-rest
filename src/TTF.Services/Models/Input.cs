@@ -1,8 +1,11 @@
-﻿namespace TTF.Services.Models
+﻿using ServiceStack;
+
+namespace TTF.Services.Models
 {
     /// <summary>
     /// Input model required by the REST service
     /// </summary>
+    [Route("/ttf/{MappingType}")]
     public class Input : IInputX, IInputY
     {
         public bool A { get; set; }

@@ -55,6 +55,8 @@
     <Compile Include="Algorithms\BaseMapping.cs" />
     <Compile Include="Algorithms\Specialized1.cs" />
     <Compile Include="Algorithms\Specialized2.cs" />
+    <Compile Include="API\MappingService.cs" />
+    <Compile Include="Configuration\TTFPlugin.cs" />
     <Compile Include="IMappingAlgorithm.cs" />
     <Compile Include="IMappingAlgorithmFactory.cs" />
     <Compile Include="InputException.cs" />
